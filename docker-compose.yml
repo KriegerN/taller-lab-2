@@ -1,0 +1,31 @@
+services:
+  app:
+    build: ./app
+    ports:
+      - "8080:80"
+    volumes:
+      - ./app:/var/www/html
+    networks:
+      - taller-red
+    depends_on:
+      - db
+
+  db:
+    image: mariadb:lts
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: crud_db
+      MYSQL_USER: usuario_db
+      MYSQL_PASSWORD: password_db
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - taller-red
+
+networks:
+  taller-red:
+    driver: bridge
+
+volumes:
+  db_data:
