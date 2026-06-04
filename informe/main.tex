@@ -1,0 +1,52 @@
+\documentclass[letter,12pt]{report}
+\def\TITULO{Laboratorio 2}
+\def\subtitulo{Taller de Ingeniería Informática}
+%\def\autores{Autores}
+\def\asignatura{}
+\def\campus{Osorno}
+\def\carrera{Ingeniería Civil en Informática}
+
+\usepackage{adjustbox}
+
+% --- AQUÍ DEBES PONER LOS PAQUETES ---
+\usepackage{listings} % Fundamental para los bloques de código y para tu índice de algoritmos
+\usepackage{hyperref} % Para que los enlaces sean clickeables (mejor ponerlo al final)
+% -------------------------------------
+
+\input{Macros}
+
+\begin{document}
+
+%%%%%%%%%%%PORTADA%%%%%%%%%%%%%%%%%%%%%
+\setlength{\unitlength}{1 cm} %Especificar unidad de trabajo
+\thispagestyle{empty}
+
+\AddToShipoutPicture*{\BackgroundPic}
+{\color{white}
+   \title{\scshape\Huge{\TITULO}\\
+  \scshape \large{\textit{\subtitulo}}\\ 
+\vspace{1cm} 
+        \Large Departamento de Ciencias de la Ingeniería\\
+        \Large \carrera\\
+        \Large \asignatura\\
+        \large \campus, Chile}
+   \author{
+   \href{mailto:matiasjavier.aguero@alumnos.ulagos.cl}{Matías Agüero}
+      \and \href{mailto:alier.fres@alumnos.ulagos.cl}{Alier Fres}
+      \and \href{mailto:nicolasandres.guerrero@alumnos.ulagos.cl}{Nicolás Guerrero}
+      \and \href{mailto:franciscojoaquin.nunez@alumnos.ulagos.cl}{Francisco Núñez}
+   } 
+   \date{\vspace{3cm}\today}
+   \maketitle
+   \ClearShipoutPicture
+   }
+\cleardoublepage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\tableofcontents
+\listoffigures
+%%%%%%%%%%%%%FIN PORTADA%%%%%%%%%%%%%%%%
+
+\input{Desarrollo}
+\end{document}
